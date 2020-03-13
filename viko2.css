@@ -1,0 +1,93 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.box {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    margin-top: -100px;
+}
+.box-1 {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    border-radius: 50%;
+    transform: scale(0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    transition: 0.5s;
+}
+.box-2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    border: 2px solid #333;
+    background-color: white;
+}
+.box-3 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transform: scale(1);
+    background-image: linear-gradient(to right, red,
+     orange, yellow, green, blue,
+      indigo, violet);
+}
+.box-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    font-size: 65px;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    transition: 0.5s;
+    border-radius: 50%;
+    font-family: cursive;
+}
+.fa-car {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes go {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.box:hover>.box-1 {transform: scale(0);}
+.box:hover>.box-2 {
+    transform: scale(0.97);
+    border: none;
+}
+.box:hover>.box-3 {
+    animation: go 1s infinite linear;
+}
+.box:hover>.box-4 {color: black;}
